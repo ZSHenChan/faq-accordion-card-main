@@ -7,33 +7,49 @@
 .content{
     min-height: 120vh;
     background: rgb(101,101,231);
-    background: linear-gradient(0deg, rgba(101,101,231,1) 0%, rgba(175,103,233,1) 100%);
+    background: linear-gradient(0deg, rgba(101,101,231,1) 50%, rgba(175,103,233,1) 100%);
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 8rem;
 }
-.content .woman, .content .shadow{
+picture{
+    width:100%;
     max-width: 14rem;
-    display: inline-flex;
+    display: flex;
     position: absolute;
 }
 .woman{
-    transform: translateY(-6.5rem);
+    transform: translate(15%,-6.5rem);
+    width: 100%;
+}
+.shadow{
+    width: 100%;
+    transform: translateX(15%);
+}
+.outer-box{
+    display: flex;
+    justify-content: center;
 }
 .box{
     background-color: white;
     border-radius: 20px;
     min-height: 20rem;
-    min-width: 18rem;
-    max-width: 80%;
+    width: 18rem;
     box-sizing: border-box;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    padding: 7rem 1.3rem;
+    padding: 7rem 1.3rem 2rem 1.3rem;
+}
+.pictures{
+    display: flex;
+}
+#box{
+    display: none;
 }
 .box .questions{
     display: inherit;
@@ -73,4 +89,45 @@
     margin-bottom: 0.5rem;
     color: hsl(240, 6%, 50%);
     /* transition: 0.5s; */
+}
+
+@media(min-width:700px){
+    picture{
+        display: inline-flex;
+        position: absolute;
+    }
+    #box{
+        display: flex;
+    }
+    .pictures{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .outer-box{
+        width: 80vw;
+        flex-direction: row;
+        background-color: white;
+        border-radius: 20px;
+        justify-content: space-between;
+    }
+    .box{
+        width:50%;
+        padding: 3rem 4rem 5rem 0;
+    }
+    .box h1{
+        align-self: flex-start;
+        margin-bottom: 1.5rem;
+    }
+    .woman{
+        width: 40vw;
+        transform: translate(-8vw, 0vh);
+    }
+    .shadow{
+        width: 80vw;
+        transform: translate(-48vw,-8vh);
+    }
+    #box{
+        width: 10rem;
+        transform: translate(-5rem,5vw);
+    }
 }
